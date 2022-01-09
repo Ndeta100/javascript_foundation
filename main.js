@@ -76,3 +76,35 @@ function sayMyName(){
 }
 // invoke
 sayMyName()
+
+
+// Javascript being weird
+function weird(){
+    height=50
+    return height
+}
+weird()
+const heyhey=function doodle(){
+    return 'hey hey '
+}
+
+// function scope vs block scope
+if(4>3){
+    var secret='748390'
+}
+secret
+
+// exercise
+// change let and use var to see the difference
+function loop(){
+    for(let i=0; i<5; i++){
+        console.log(i)
+    }
+    console.log('final', i)
+}
+loop()
+
+// IIFE
+(()=>{
+
+})()
