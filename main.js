@@ -48,12 +48,30 @@ function marry(...args){
 }
 marry1('ndeta', 'xxxx')
 
+
+// Variable environment
 function two(){
-    const isValid
+    var isValid //undefined
 }
 function one(){
     isValid=true
     two()
 }
-const isValid=false
+var isValid=false
 one()
+
+// Scope chain
+
+function findName(){
+    var b='b'
+    return printName()
+}
+function printName(){
+    var c='c'
+    return 'Ndeta innocent'
+}
+function sayMyName(){
+    var a='a'
+    return findName()
+}
+sayMyName()
