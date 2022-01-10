@@ -108,3 +108,59 @@ loop()
 (()=>{
 
 })()
+
+// This keyword
+// this gives methods access to their objects
+// Execute the same code for multiple objects
+const obj={
+    name:'billy',
+    sing(){
+        return 'lalalalala' + this.name
+    },
+    singAgain(){
+        return this.sing() + '!'
+    }
+}
+obj.sing()
+
+function importantPerson(){
+    console.log(this.name)
+}
+
+const name='Ndeta'
+const obj1={
+    name:'Cassey',
+    importantPerson:importantPerson
+}
+const obj2={
+    name:'John',
+    importantPerson:importantPerson
+}
+importantPerson()
+obj1.importantPerson()
+obj2.importantPerson()
+
+
+// call, apply and bind
+
+function a (){
+    console.log('hi')
+}
+a.call()
+a.apply()
+
+const wizard={
+    name:'Merlin',
+    health:100,
+    heal(){
+        return this.health=100
+    } 
+}
+
+wizard.heal()
+
+const archer={
+    name:'Robin Hood',
+    health:30
+}
+wizard.heal.call(archer)
