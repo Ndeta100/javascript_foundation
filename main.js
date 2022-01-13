@@ -164,3 +164,26 @@ const archer={
     health:30
 }
 wizard.heal.call(archer)
+
+// function currying
+
+function multiple(a,b){
+    return a *b
+}
+multiple(3,5)
+let multiplyByTwo=multiple.bind(this, 2) //now it gives a function which we can call with a second parameter
+multiplyByTwo(4)
+
+// Exercise
+var b={
+    name:'jay',
+    say() {console.log(this)}
+}
+ var c={
+     name:'jay',
+     say() {return function() {console.log(this)}}
+ }
+ var d={
+     name:'jay',
+     say() {return ()=>console.log(this)}
+ }
